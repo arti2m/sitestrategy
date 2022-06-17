@@ -1,0 +1,35 @@
+{% extends 'websitestrategy/base.html' %}
+
+{% block content %}
+<h1 class="page-title">Новости и события</h1>
+<div class="news_and_content">
+    <div class="news_and_content_header">
+        <div class="blog-page">
+            <a href="#!" class="blog-page__tab">Новости</a>
+            <a href="#!" class="blog-page__tab">События</a>
+        </div>
+       <hr>
+        <div class="blog-page__tags">
+            <input type="checkbox" class="read-more-checker" id="read-more-checker" />
+                <div class="limiter">
+                    <ul>
+                        {% for i in tags %}
+                        <li><a href="">{{i.tag}}</a></li>
+                        {% endfor %}
+                    </ul>
+            <!-- Здесь сам контент который должен будет скрываться / раскрываться -->
+                <div class="bottom"></div>
+                </div>
+            <label for="read-more-checker" class="read-more-button"></label>
+        </div>
+    </div>
+<ul>
+    {% for i in news %}
+    <li>
+        <h5>{{ i.datetime }}</h5>
+        <h5>{{ i.header }}</h5>
+        <hr>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

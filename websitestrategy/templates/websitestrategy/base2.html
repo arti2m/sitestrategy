@@ -1,0 +1,203 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link type="text/css" rel="stylesheet" href="{% static 'websitestrategy/css/style.css' %}">
+</head>
+<body>
+{% block mainmenu %}
+<div class="document">
+    <div class="document__content">
+        <header class="header">
+            <div class="container">
+                <div class="header__top">
+                    <a href="/" class="header__logo logo">
+                    </a>
+                    <div class="header__control">
+                        <a href="">В социальных сетях</a>
+                        <div class="header__control">
+                            <button>Личный кабинет</button>
+                        </div>
+                        <p>Кнопка личный кабинет</p>
+                    </div>
+                </div>
+                <div class="header__bot">
+                    <div class="header__menu">
+                        <ul>
+                            {% for i in menu %}
+                            <li>{{ i }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        {% endblock mainmenu %}
+        <section class="double">
+            <div class="container">
+                <h1 class="page-title">Новости и события</h1>
+                <div class="double__flex">
+                    <div class="double__content">
+                        {% block content %}
+                        {% endblock %}
+                    </div>
+                    <div class="double__aside">
+                        <div class="aside">
+                            <div class="aside__box aside__box--small"></div>
+                            <div class="aside__box aside__box--small"></div>
+                            <div class="aside__box aside__box--small"></div>
+                            <div class="aside__box aside__map">
+                                <div class="aside__box aside__map">
+                                    <div class="aside__title">Команда Правительства Нижегородской области</div>
+                                    <div class="aside__text">«Команда Правительства» — программа по формированию высокоэффективного коллектива
+                                        управленцев.
+                                    </div>
+                                    <a href="https://hr.government-nnov.ru/" target="_blank" class="aside__map-btn btn btn-outline-secondary">Перейти на сайт</a>
+                                </div>
+                                <a href="https://серафим.рф/" target="_blank" class="aside__box aside__serafim">
+                                    <img src="/static/new_design/img/general/serafim-banner.png" alt="">
+                                    <div class="aside__map-btn btn btn-outline-secondary">Перейти на сайт</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+<div class="document__footer">
+    <!-- begin::footer -->
+    <div class="footex ismobile">
+        <div class="footex__box">
+            <div class="footex__icon">
+                <svg class="icon__pdf2" width="35px" height="36px">
+                    <use xlink:href="#pdf2"></use>
+                </svg>
+            </div>
+            <div class="footex__text">Скачать полную версию
+                <br>Стратегии развития
+                <br>Нижегородской области (191 стр)
+            </div>
+        </div>
+        <a href="/static/new_design/files/Proyekt_Strategii_Nizhegorodskoy_oblasti_2035.pdf" target="_blank" class="footex__btn">скачать</a>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__contacts">
+                    <div class="footer__title">Контакты:</div>
+                    <div class="footer__text">
+                        603093, Нижний Новгород, Большая Печерская 44,
+                        <br><a href="mailto:str@gov.kreml.nnov.ru">str@gov.kreml.nnov.ru</a><br>
+                        Телефон : <a href="tel:88314378886">88314378886</a><br>
+                    </div>
+                </div>
+                    <div class="footer__menu">
+        <ul>
+                            <li class="">
+
+                                            <a class="menu-item" href="https://strategy.government-nnov.ru/ru-RU/longread" target="_blank">Статьи</a>
+
+                </li>
+                            <li class="">
+
+                                            <a class="menu-item" href="/ru-RU/news">Новости и события</a>
+
+                </li>
+                            <li class="">
+
+                                            <a class="menu-item" href="/ru-RU/ideas">Идеи</a>
+
+                </li>
+                            <li class="">
+
+                                            <a class="menu-item" href="https://xn--52-6kca2cwbo.xn--p1ai/?tab=nationalProjects" target="_blank">Интерактивная карта</a>
+
+                </li>
+                            <li class="">
+
+                                            <a class="menu-item" href="https://strategy.government-nnov.ru/ru-RU/national-projects" target="_blank">Национальные проекты</a>
+
+                </li>
+                            <li class="">
+
+                                            <a class="menu-item" href="/ru-RU/experts">Эксперты и мнения</a>
+
+                </li>
+                            <li class="">
+
+                                            <a class="menu-item" href="/ru-RU/about-strategy">О Создании стратегии</a>
+
+                </li>
+                            <li class="">
+
+                                            <a class="menu-item" href="/ru-RU/project-office">О Проектном офисе</a>
+
+                </li>
+                    </ul>
+    </div>
+                <div class="footer__info">
+                    <a href="/static/new_design/files/Proyekt_Strategii_Nizhegorodskoy_oblasti_2035.pdf" target="_blank" dopwnload="" class="footer__download">
+                        <div class="footer__icon">
+                            <svg class="icon__pdf" width="35px" height="36px">
+                                <use xlink:href="#pdf"></use>
+                            </svg>
+                        </div>
+                        <div class="footer__text">Скачать полную версию
+                            Стратегии развития
+                            <br>Нижегородской области (191 стр)
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__center">
+            <div class="footer__title">Мы в социальных сетях:</div>
+            <div class="footer__social">
+                <div class="social social-color">
+                    <!-- <a href="https://t.me/srategy_nn"
+                       class="social__item social-telegram"
+                       target="_blank">
+                        <svg class="icon__telegram-logo-full" width="448px"
+                             height="512px">
+                            <use xlink:href="#telegram-logo-full"></use>
+                        </svg>
+                    </a> -->
+                    <a href="https://vk.com/strategy_nn" class="social__item social-vk" target="_blank">
+                        <svg class="icon__vk-logo" width="548px" height="548px">
+                            <use xlink:href="#vk-logo"></use>
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/nnstrategy" class="social__item social-facebook" target="_blank">
+                        <svg class="icon__facebook-logo" width="96px" height="96px">
+                            <use xlink:href="#facebook-logo"></use>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/nnstrategy/?hl=ru" class="social__item social-instagram" target="_blank">
+                        <svg class="icon__instagram-logo" width="169px" height="169px">
+                            <use xlink:href="#instagram-logo"></use>
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCs33oGZEY_0ZVboh1h8yR9g/featured" class="social__item social-youtube" target="_blank">
+                        <svg class="icon__youtube-logo" width="512px" height="512px">
+                            <use xlink:href="#youtube-logo"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__phone">
+            Телефон : <a href="tel:88314378886">88314378886</a>
+        </div>
+    </footer>
+    <!-- end::footer -->
+</div>
+</div>
+
+
+</body>
+</html>
