@@ -12,24 +12,62 @@
         <div class="blog-page__tags">
             <input type="checkbox" class="read-more-checker" id="read-more-checker" />
                 <div class="limiter">
-                    <ul>
                         {% for i in tags %}
-                        <li><a href="">{{i.tag}}</a></li>
+                        <button class="tag-btn"><a href="" class="tag-btn_link">{{i.tag}}</a></button>
                         {% endfor %}
-                    </ul>
             <!-- Здесь сам контент который должен будет скрываться / раскрываться -->
                 <div class="bottom"></div>
                 </div>
             <label for="read-more-checker" class="read-more-button"></label>
         </div>
+        <div class="news">
+            <a href="{{ mainnews.get_absolute_url }}" class = 'first_card_news__image'><div class="news_glavn">
+                <img src="{{ mainnews.photo.url }}" alt="" height="266">
+                <div class="news_glavn_text">
+                    <div class ='news_glavn_text_date'>{{ mainnews.datetime|date:"d M Y"|lower }}</div><br>
+                    <div class ='news_glavn_text_tag'>{{ mainnews.tag }}</div><br>
+                    <div class="news_glavn_header">{{ mainnews.header }}</div><br>
+                    <div class="news_glavn_text_short">{{ mainnews.shortText }}</div><br>
+                </div>
+                </a>
+            </div>
+            <div class="news_cards">
+                {% for new in news %}
+                <div class='news_card_border'>
+                    <div class="news_cards_inner">
+                       <div class="news_card_inner_img_and_date">
+                           <a href="{{ new.get_absolute_url }}" class = 'news_card_inner__img'><img src="{{ new.photo.url }}" alt="" >
+                           <div class ='news_card_inner__date'>{{ new.datetime|date:"d M"|lower }}</div>
+                           </a>
+                       </div>
+                       <div class="news_card_inner_tag_and_header">
+                           <div class="news_glavn_text_tag">{{ new.tag }}</div>
+                           <a class="linkforcard" href="{{ new.get_absolute_url }}"><div class="news_card_inner_header">{{ new.header }}</div></a>
+                       </div>
+                   </div>
+               </div>
+                {% endfor %}
+           </div>
+                
+            </div>
+        </div>
     </div>
-<ul>
-    {% for i in news %}
-    <li>
-        <h5>{{ i.datetime }}</h5>
-        <h5>{{ i.header }}</h5>
-        <hr>
-    </li>
-    {% endfor %}
-</ul>
+<!--    <div class="pagination">-->
+<!--    <span class="step-links">-->
+<!--        {% if page_obj.has_previous %}-->
+<!--            <a href="?page=1">&laquo; first</a>-->
+<!--            <a href="?page={{ page_obj.previous_page_number }}">Предыдущая</a>-->
+<!--        {% endif %}-->
+
+<!--        <span class="current">-->
+<!--            Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.-->
+<!--        </span>-->
+
+<!--        {% if page_obj.has_next %}-->
+<!--            <a href="?page={{ page_obj.next_page_number }}">Следующая</a>-->
+<!--            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>-->
+<!--        {% endif %}-->
+<!--    </span>-->
+<!--</div>-->
+
 {% endblock %}

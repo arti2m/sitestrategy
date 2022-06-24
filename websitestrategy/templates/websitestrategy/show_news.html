@@ -1,0 +1,28 @@
+{% extends 'websitestrategy/base.html' %}
+
+{% block content %}
+<h1 class="page-title">Новости и события</h1>
+<div class="news_and_content">
+    <div class="news_and_content_header">
+        <div class="blog-page">
+            <a href="#!" class="blog-page__tab">Новости</a>
+            <a href="#!" class="blog-page__tab">События</a>
+        </div>
+       <hr>
+<div class="showcontent">
+    <div class="information"></div>
+    <div class="statya">
+        <h2>{{ news.header }}</h2>
+        <p>{{ news.shortText }}</p>
+        <div class="statya_img">
+            <img src="{{ news.photo.url }}" alt="">
+        </div>
+        <div class="longText">{{ news.longText }}</div>
+    </div>
+</div>
+</div>
+</div>
+
+
+
+{% endblock %}

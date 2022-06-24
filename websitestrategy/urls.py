@@ -20,7 +20,12 @@ urlpatterns = [
     path('', index, name='home'),
     path('about-strategy', about, name='about'),
     path('news/', news, name='news'),
-    path('cats/', cats),
-    path('cats/<slug:cat>', cats),
+    # path('show_news/<slug:news_slug>/', show_news, name='shownews'),
+    path('news/<slug:news_slug>/', show_news, name='shownews'),
+
+    #
+    # path('articles/', articles, name='articles'),
+    # path('cats/', cats),
+    # path('cats/<slug:cat>', cats),
 ]
 
